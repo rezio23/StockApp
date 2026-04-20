@@ -21,9 +21,9 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        // If already logged in, go to user list
+        // If already logged in, go to main activity
         if (auth.currentUser != null) {
-            goToUserList()
+            goToMainActivity()
             return
         }
 
@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
                     binding.progressBar.visibility = View.GONE
-                    goToUserList()
+                    goToMainActivity()
                 }
                 .addOnFailureListener { e ->
                     binding.progressBar.visibility = View.GONE
@@ -61,8 +61,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun goToUserList() {
-        startActivity(Intent(this, UserListActivity::class.java))
+    private fun goToMainActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }
