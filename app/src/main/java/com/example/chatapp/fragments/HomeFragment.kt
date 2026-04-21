@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
     private val inventoryList = mutableListOf<InventoryItem>()
     private lateinit var adapter: InventoryAdapter
     
-    private val DB_URL = "https://chatapp-8536b-default-rtdb.asia-southeast1.firebasedatabase.app"
+    private val DB_URL = "https://chatapp-8536b-default-rtdb.asia-southeast1.firebasedatabase.app/"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)

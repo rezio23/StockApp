@@ -74,7 +74,8 @@ class RegisterActivity : AppCompatActivity() {
                             Log.d("RegisterActivity", "Database write success")
                             binding.progressBar.visibility = View.GONE
                             Toast.makeText(this, "Registered successfully!", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, UserListActivity::class.java))
+                            // Redirect to MainActivity instead of UserListActivity
+                            startActivity(Intent(this, MainActivity::class.java))
                             finish()
                         }
                         .addOnFailureListener { e ->
